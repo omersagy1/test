@@ -1,0 +1,26 @@
+// Note that NEWLINE can any number of newlines (i.e. NEWLINE+)
+
+script : scene+
+scene : characters episodes END
+
+characters: "CHARACTERS:" NEWLINE (character NEWLINE)+
+character: name ["," alias]
+name: STRING
+alias: STRING
+
+episodes: episode+
+episode: marker NEWLINE+ actions
+marker: "{" STRING "}"
+
+actions: (action NEWLINE+)+
+action: (narration | dialogue | alias | unalias | fork) SPACE marker
+
+narration: "~" STRING
+dialogue: identifier ": " STRING
+alias: "ALIAS" STRING "AS" STRING
+unalias: "UNALIAS " STRING " AS " STRING
+
+fork: "P:" NEWLINE+ (choice NEWLINE+)+ (consequence NEWLINE+)+
+choice: NUMBER ". " STRING
+consequence: NUMBER "->" NEWLINE actions
+

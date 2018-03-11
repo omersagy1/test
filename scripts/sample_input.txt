@@ -1,0 +1,49 @@
+CHARACTERS:
+Bob
+Alice
+
+
+{awaken}
+~ You wake up on a cement porch. Before your eyes open, you can hear the peaceful atmosphere of the countryside. Something in you wants to get up, but you are too dizzy, and your body is very heavy.
+
+
+ALIAS Bob AS Man’s Voice
+
+
+B: Kid, you conscious?
+~ You feel your body shake.
+B: Kid?
+P:
+1. I’m… alright.
+2. How did I get here?
+1 ->
+B: You’re a little bloodied up. Try to stand.  {stand up}
+2 ->
+B: You ought to tell me. {explain self}
+
+
+{explain self}
+~ You bumble nonsense that even you can’t understand. When you stop and let yourself hear your own breath, you realize that you remember nothing. Bob’s face is smeared beige but you can tell he’s staring at you with pity.
+B: Here, hold on to me. I’ll pull you up.
+
+
+{stand up}
+~ You let yourself be slowly dragged into a standing position. The world is blurry, but colorful. The hands holding you up by the shoulders feel as though they belong to the Earth.
+B: I’m Bob.
+UNALIAS Bob
+B: Can you see me?
+~ You see something, but it is smeared across your vision. In this state, you could not tell a man apart from a field.
+P:
+1. Ah… no.
+2. I can hear you well enough.
+1 ->
+B: Just hold on to me.
+~ You hold on to Bob’s forearm. It is hard like stone.
+B: Come inside. {go inside}
+2 ->
+B: Well then follow my voice inside, why don’t you? {go inside}
+
+{go inside}
+~ You walk through the door.
+
+END
