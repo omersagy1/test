@@ -9,7 +9,10 @@ class Character:
 
         # Optional internal abbreviation used to refer to the
         # character in the script. Permanent.
-        self.code_name = code_name
+        if code_name:
+            self.code_name = code_name
+        else:
+            self.code_name = self.real_name[0]
 
         # Optional alternate display name. Can be altered.
         # If set, overrides the real name as a display name.
@@ -28,7 +31,7 @@ class Character:
         else:
             return self.real_name
 
-    def alias(self, alias: str) -> None:
+    def assign_alias(self, alias: str) -> None:
         self.alias = alias
 
     def unalias(self) -> None:
@@ -40,12 +43,13 @@ class GameState:
     def __init__(self, scene=None):
         self.characters = []
         self.milestones = []
+        self.scene = scene
         if scene:
-            self.initialize_from_scene(scene)
+            self.initialize_from_scene()
 
-    def initialize_from_scene(self, scene: gametree.Scene):
+    def initialize_from_scene(self):
         self.clear_characters()
-        for c in scene.characters:
+        for c in self.scene.characters:
             self.characters.append(
                 Character(c.name, c.code_name))
 
