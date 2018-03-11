@@ -6,7 +6,7 @@ import printer as p
 def play(game_tree: t.GameTree) -> None:
 
     p.print_line('')
-    p.print_line('SAMPLE GAME')
+    p.print_line('......')
 
     state = s.GameState(game_tree.scene)
     first_episode = game_tree.scene.episodes[0]

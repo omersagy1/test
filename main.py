@@ -1,7 +1,7 @@
 import parser
 import player
 
-STORY_FILE = 'scripts/simple.txt'
+STORY_FILE = 'scripts/sf_adventure.txt'
 
 
 if __name__ == '__main__':

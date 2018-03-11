@@ -96,7 +96,7 @@ def parse_episode(contents: str) -> (str, Episode):
 
 def parse_marker(contents: str) -> (str, str):
     marker_line, rest = read_lines(contents, 1)
-    marker = marker_line.strip()[1:-1]
+    marker = marker_line.strip()[1:-1].strip()
     return rest, marker
 
 
